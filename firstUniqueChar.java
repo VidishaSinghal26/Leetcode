@@ -12,7 +12,9 @@
 // Input: s = "aabb"
 // Output: -1
 
-Solution:
+//Solution:
+
+import java.util.HashMap;
 
 class Solution {
     public int firstUniqChar(String s) {
@@ -37,13 +39,13 @@ class Solution {
 
 //Optimized Apporach (two pointer)
 
-        int res=Integer.MAX_VALUE;
-       for(char i='a';i<='z';i++){
-            int first=s.indexOf(i);
-            int last=s.lastIndexOf(i);
-            if(first !=-1 && first==last)
-                res=Math.min(res,first); 
-       }
-        return res==Integer.MAX_VALUE?-1:res;
+    //     int res =Integer.MAX_VALUE;
+    //    for(char i='a';i<='z';i++){
+    //         int first=s.indexOf(i);
+    //         int last=s.lastIndexOf(i);
+    //         if(first !=-1 && first==last)
+    //             res=Math.min(res,first); 
+    //    }
+    //     return res==Integer.MAX_VALUE?-1:res;
     }
 }

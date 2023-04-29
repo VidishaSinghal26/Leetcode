@@ -9,7 +9,10 @@
 // Input: numRows = 1
 // Output: [[1]]
 
-Solution:
+// Solution:
+
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public List<List<Integer>> generate(int numRows) {

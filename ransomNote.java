@@ -9,7 +9,7 @@
 // Input: ransomNote = "aa", magazine = "ab"
 // Output: false
 
-Solution:
+// Solution:
 
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
