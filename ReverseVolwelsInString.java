@@ -11,24 +11,29 @@
 
 class Solution {
     public String reverseVowels(String s) {
-        // String vowels = "aeiouAEIOU";
-        // String ans="";
-        // ArrayList<Character> list = new ArrayList<>();
-        // for(int i = 0; i<s.length() ;i++){
-        //     if(vowels.contains(""+s.charAt(i))){
-        //         list.add(s.charAt(i));
-        //     }
-        // }
+        
+ //Method-1
+        
+        String vowels = "aeiouAEIOU";
+        String ans="";
+        ArrayList<Character> list = new ArrayList<>();
+        for(int i = 0; i<s.length() ;i++){
+            if(vowels.contains(""+s.charAt(i))){
+                list.add(s.charAt(i));
+            }
+        }
 
-        // int j = list.size()-1;
-        // for(int i = 0 ; i<s.length() ; i++){
-        //     if(vowels.contains(""+s.charAt(i)))
-        //        ans += list.get(j--);
-        //     else
-        //         ans += s.charAt(i); 
-        // }
-        // return ans;
-
+        int j = list.size()-1;
+        for(int i = 0 ; i<s.length() ; i++){
+            if(vowels.contains(""+s.charAt(i)))
+               ans += list.get(j--);
+            else
+                ans += s.charAt(i); 
+        }
+        return ans;
+        
+ //Method-2
+        
         String vowels = "aeiouAEIOU";
         int start = 0;
         int end = s.length()-1;
