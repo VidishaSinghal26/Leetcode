@@ -14,6 +14,7 @@
   class Solution {
     public boolean canMakeArithmeticProgression(int[] arr) {
       
+ //Brute Force (TC - O(nlogn) , SC - O(1) )
         Arrays.sort(arr);
         for(int i  = 0 ;  i< arr.length-2 ; i++){
             if((arr[i+1] - arr[i]) != (arr[i+2]-arr[i+1])){
@@ -21,5 +22,29 @@
             }
         }
         return true;
+      
+ //Optimized (TC - O(n) , SC - O(n))
+      
+       int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for(int  i = 0 ; i<arr.length ; i++ ){
+            max = Math.max( arr[i], max );
+            min = Math.min( arr[i] , min);
+        }
+
+        HashSet<Integer> set = new HashSet<>();
+        for(int a  : arr){
+            set.add(a);
+        }
+        int d = ((max-min)+(arr.length-1)-1)/(arr.length - 1);
+
+        for(int i  = 0 ; i< arr.length ; i++){
+            int expected =  min + (i*d) ; 
+            if(!set.contains(expected)){
+                return false;
+            } 
+        }
+        return true;
+      
     }
 }
